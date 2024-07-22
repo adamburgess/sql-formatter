@@ -28,7 +28,7 @@ fn main() -> ExitCode {
 }
 
 lazy_static! {
-    static ref RE: Regex = Regex::new(r"^INSERT INTO `[a-z0-9_]+` VALUES(?= \()").unwrap();
+    static ref RE: Regex = Regex::new(r"^INSERT INTO `[a-zA-Z0-9_-]+` VALUES(?= \()").unwrap();
 }
 
 fn split_insert(stdout: &mut io::BufWriter<Stdout>, str: &str) -> io::Result<()> {
